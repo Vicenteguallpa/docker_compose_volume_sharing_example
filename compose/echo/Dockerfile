@@ -1,0 +1,11 @@
+FROM python:3
+
+COPY /bin ./bin
+
+ENV CONTAINER_VOLUME_LOCATION=/container_storage
+
+VOLUME [${CONTAINER_VOLUME_LOCATION}]
+
+WORKDIR ${CONTAINER_VOLUME_LOCATION}
+
+CMD echo_two_files.sh

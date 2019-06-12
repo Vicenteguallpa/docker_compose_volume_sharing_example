@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  echo_app:
+    build:
+      context: ./compose/echo
+    volumes:
+      - ${LOCAL_VOLUME_LOCATION}:${CONTAINER_VOLUME_LOCATION}
+
+  cat_app:
+    build:
+      context: ./compose/cat
+    volumes:
+      - ${LOCAL_VOLUME_LOCATION}:${CONTAINER_VOLUME_LOCATION}
+    depends_on:
+      - echo_app
