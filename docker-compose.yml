@@ -1,16 +1,17 @@
 version: "3.3"
 
+# We have two services, echo_app and cat_app
 services:
   echo_app:
     build:
-      context: ./compose/echo
+      context: ./compose/echo # set to the directory where echo_app's Dockerfile is located
     volumes:
-      - ${LOCAL_VOLUME_LOCATION}:${CONTAINER_VOLUME_LOCATION}
+      - ${LOCAL_VOLUME_LOCATION}:${CONTAINER_VOLUME_LOCATION} # variables taken from .env
 
   cat_app:
     build:
-      context: ./compose/cat
+      context: ./compose/cat # set to the directory where cat_app's Dockerfile is located
     volumes:
-      - ${LOCAL_VOLUME_LOCATION}:${CONTAINER_VOLUME_LOCATION}
+      - ${LOCAL_VOLUME_LOCATION}:${CONTAINER_VOLUME_LOCATION} # variables taken from .env
     depends_on:
-      - echo_app
+      - echo_app # ensures that echo_app runs before cat_app
