@@ -1,5 +1,7 @@
 # docker_compose_volume_sharing_example
-
+## Introduction
+The purpose of this tutorial is to demonstrate container to container communication through volumes as well as mounting local host directories as volumes in containers. You should already have docker and docker compose installed. After following this tutorial, check out the comments in some of the files in this repo that were excluded from the tutorial
+## Tutorial
 Open a terminal and create a directory for your project as follows: 
 ```
 $ mkdir docker_compose_volume_sharing_example
@@ -222,7 +224,15 @@ $ docker-compose up
 ```
 You should see an output similar to the following:
 ```
-TODO
+Creating network "dockercomposevolumesharingexample_default" with the default driver
+Creating dockercomposevolumesharingexample_echo_app_1 ... done
+Creating dockercomposevolumesharingexample_cat_app_1  ... done
+Attaching to dockercomposevolumesharingexample_echo_app_1, dockercomposevolumesharingexample_cat_app_1
+dockercomposevolumesharingexample_echo_app_1 exited with code 0
+cat_app_1   | Hello World
+cat_app_1   | It's nice to be back
+cat_app_1   | Hello docker compose!
+dockercomposevolumesharingexample_cat_app_1 exited with code 0
 ```
 Inside *local_storage* you should now see two new text files, echo_file_1.txt and echo_file_2.txt with respecitve content:
 ```
@@ -250,4 +260,7 @@ Your project directory should now look like:
   .env
   docker-compose.yml
 ```
-Congrats! You have successfully completed container volume communication!
+Congrats! You have successfully completed container volume communication! Remember to shut down your containers with the following command:
+```
+$ docker-compose down
+```
