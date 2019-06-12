@@ -1,6 +1,6 @@
 # docker_compose_volume_sharing_example
 ## Introduction
-The purpose of this tutorial is to demonstrate container to container communication through volumes as well as mounting local host directories as volumes in containers. You should already have docker and docker compose installed. After following this tutorial, check out the comments in some of the files in this repo that were excluded from the tutorial
+The purpose of this tutorial is to demonstrate container-to-container communication through volumes as well as mounting local host directories as volumes in containers. You should already have docker and docker compose installed. After following this tutorial, check out the comments in some of the files in this repo that were excluded from the tutorial.
 ## Tutorial
 Open a terminal and create a directory for your project as follows: 
 ```
@@ -218,7 +218,7 @@ Step 6/6 : CMD cat_two_files.sh
 Successfully built 26ca6e36c1e8
 Successfully tagged dockercomposevolumesharingexample_cat_app:latest
 ```
-Now run thw following command:
+Now run the following command:
 ```
 $ docker-compose up
 ```
@@ -234,7 +234,7 @@ cat_app_1   | It's nice to be back
 cat_app_1   | Hello docker compose!
 dockercomposevolumesharingexample_cat_app_1 exited with code 0
 ```
-Inside *local_storage* you should now see two new text files, echo_file_1.txt and echo_file_2.txt with respecitve content:
+Inside *local_storage* you should now see two new text files, echo_file_1.txt and echo_file_2.txt with respective content:
 ```
 Hello World
 ```
